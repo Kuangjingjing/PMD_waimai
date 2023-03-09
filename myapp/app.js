@@ -13,9 +13,9 @@ let OSS = require('ali-oss');
 //设置阿里oss
 var client = new OSS({
     region: 'oss-cn-beijing', //地域
-    accessKeyId: 'LTAI5tPZB5P5BadiyNQxQoy5', //keyid
-    accessKeySecret: 'WMA1UU8nZiwE6KMTtP07sJzckv4Esz', //密钥
-    bucket: 'kuangjing' //仓库名字
+    accessKeyId: '', //keyid
+    accessKeySecret: '', //密钥
+    bucket: '' //仓库名字
 });
 
 var ali_oss = {
