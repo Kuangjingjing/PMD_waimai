@@ -1,0 +1,37 @@
+extends ../publictemplate/common
+block admin
+ .mws-panel.grid_8
+  .mws-panel-header
+    span 食品修改
+  .mws-panel-body.no-padding
+    form.mws-form(action='/adminshopdoupdate' method="POST" enctype="multipart/form-data")
+      .mws-form-inline
+        .mws-form-row
+          label.mws-form-label 食品名称
+          .mws-form-item
+            input.large(type='text' name="foodname" value=`${data.foodname}`)
+        .mws-form-row
+          label.mws-form-label 食品旧logo
+          .mws-form-item
+            img(src=`https://kuangjing.oss-cn-beijing.aliyuncs.com/${data.foodpic}`, alt="" width="200px")
+        .mws-form-row
+          label.mws-form-label 食品 logo
+          .mws-form-item
+            input.large(type='file' name="foodpic")
+        .mws-form-row
+          label.mws-form-label 食品单价
+          .mws-form-item
+            input.large(type='text' name="price" value=`${data.price}`)
+        .mws-form-row
+          label.mws-form-label 描述语
+          .mws-form-item
+            input.large(type='text' name="descr" value=`${data.descr}`)            
+        .mws-form-row
+          label.mws-form-label 所属商家
+          .mws-form-item
+            input.large(type='text' name="shoplist_id" value=`${data.shoplist_id}`)  
+          
+      .mws-button-row
+        input(type="hidden" name="sid" value=`${data.id}`)
+        input.btn.btn-danger(type='submit' value='修改')
+        input.btn(type='reset' value='重置')

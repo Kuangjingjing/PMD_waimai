@@ -1,0 +1,38 @@
+extends ../publictemplate/common
+block admin
+  h2 统计后台数据
+    #main(style='width: 1000px;height:800px; margin:0 auto')
+    input#xAxis(value=`${xAxis}` type='hidden')
+    input#series(value=`${series}` type='hidden')
+    script(type='text/javascript').
+      // 基于准备好的dom，初始化echarts实例
+      var myChart = echarts.init(document.getElementById('main'));
+      var datas = document.getElementById('xAxis').value;
+      var data2 = document.getElementById('series').value;
+      var xAxis = datas.split(',');
+      var series = data2.split(',');
+      // 指定图表的配置项和数据
+      var option = {
+        title: {
+            text: '数据统计'
+        },
+        tooltip: {},
+            legend: {
+            data:['销量']
+        },
+        xAxis: {
+        // data:["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+            data:xAxis
+        },
+        yAxis: {},
+        series: [{
+            name: '销量',
+            type: 'bar',
+            data: series
+        }]
+      };
+      // 使用刚指定的配置项和数据显示图表。
+      myChart.setOption(option);
+
+block title 
+    |后台首页

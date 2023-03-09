@@ -1,0 +1,27 @@
+extends ../publictemplate/common
+block admin 
+ .mws-panel.grid_8
+  .mws-panel-header
+    span
+      i.icon-table
+      |  管理员列表
+  .mws-panel-body.no-padding
+    table.mws-table
+      thead
+        tr
+          th 序号
+          th 管理员名称
+          th 密码
+          th 操作
+      tbody
+      -for(let i=0;i<datas.length;i++)
+        tr
+          td=datas[i].id
+          td=datas[i].uname
+          td=datas[i].pwd
+          td
+            a(href=`/adminuserupdate?id=${datas[i].id}` class="btn btn-warning") 修改
+            a(href=`/adminuserdel?id=${datas[i].id}` class="btn tn-danger") 删除    
+     
+block title 
+    | 管理员列表模块

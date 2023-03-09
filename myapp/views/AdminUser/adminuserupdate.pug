@@ -1,0 +1,25 @@
+extends ../publictemplate/common
+block admin
+ .mws-panel.grid_8
+  .mws-panel-header
+    span 管理员修改
+  .mws-panel-body.no-padding
+    form.mws-form(action='/adminuserdoupdate' method='POST')
+      .mws-form-inline
+        .mws-form-row
+          label.mws-form-label 管理员名称
+          .mws-form-item
+            input.large(type='text' name="uname" value=`${datas.uname}`)
+        .mws-form-row
+          label.mws-form-label 密码
+          .mws-form-item
+            input.large(type='password' name="pwd" value=`${datas.pwd}`)
+            input(type="hidden" name="id" value=`${id}`)
+      .mws-button-row
+        input.btn.btn-danger(type='submit' value='修改')
+        input.btn(type='reset' value='重置')
+block title 
+    | 管理员修改        
+        
+
+

@@ -1,0 +1,148 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    // Viewport Metatag
+    meta(name='viewport' content='width=device-width,initial-scale=1.0')
+    // Plugin Stylesheets first to ease overrides
+    link(rel='stylesheet' type='text/css' href='/b/plugins/colorpicker/colorpicker.css' media='screen')
+    link(rel='stylesheet' type='text/css' href='/b/custom-plugins/wizard/wizard.css' media='screen')
+    // Required Stylesheets
+    link(rel='stylesheet' type='text/css' href='/b/bootstrap/css/bootstrap.min.css' media='screen')
+    link(rel='stylesheet' type='text/css' href='/b/css/fonts/ptsans/stylesheet.css' media='screen')
+    link(rel='stylesheet' type='text/css' href='/b/css/fonts/icomoon/style.css' media='screen')
+    link(rel='stylesheet' type='text/css' href='/b/css/mws-style.css' media='screen')
+    link(rel='stylesheet' type='text/css' href='/b/css/icons/icol16.css' media='screen')
+    link(rel='stylesheet' type='text/css' href='/b/css/icons/icol32.css' media='screen')
+    // Demo Stylesheet
+    link(rel='stylesheet' type='text/css' href='/b/css/demo.css' media='screen')
+    // jQuery-UI Stylesheet
+    link(rel='stylesheet' type='text/css' href='/b/jui/css/jquery.ui.all.css' media='screen')
+    link(rel='stylesheet' type='text/css' href='/b/jui/jquery-ui.custom.css' media='screen')
+    // Theme Stylesheet
+    link(rel='stylesheet' type='text/css' href='/b/css/mws-theme.css' media='screen')
+    link(rel='stylesheet' type='text/css' href='/b/css/themer.css' media='screen')
+    link(rel='stylesheet' type='text/css' href='/b/css/my.css' media='screen')
+    script(src='/echarts/dist/echarts.simple.min.js')
+    script(src="/jquery/dist/jquery.js") 
+    title 
+      block title
+  body
+    // Header
+    #mws-header.clearfix
+      // Logo Container
+      #mws-logo-container
+        // Logo Wrapper, images put within this wrapper will always be vertically centered
+        #mws-logo-wrap
+           h2(style="color:orange") 外卖系统后台
+      // User Tools (notifications, logout, profile, change password)
+      #mws-user-tools.clearfix
+        // User Information and functions section
+        #mws-user-info.mws-inset
+          // User Photo
+          #mws-user-photo
+            img(src='b/example/profile.jpg' alt='User Photo')
+          // Username and Functions
+          #mws-user-functions
+            #mws-username
+              | Hello, #{uname}
+            ul
+              li
+                a(href='/admindologout') 退出
+    // Start Main Wrapper
+    #mws-wrapper
+      // Necessary markup, do not remove
+      #mws-sidebar-stitch
+      #mws-sidebar-bg
+      // Sidebar Wrapper
+      #mws-sidebar
+        // Hidden Nav Collapse Button
+        #mws-nav-collapse
+          span
+          span
+          span
+        // Searchbox
+        #mws-searchbox.mws-inset
+          form(action='typography.html')
+            input.mws-search-input(type='text' placeholder='Search...')
+            button.mws-search-submit(type='submit')
+              i.icon-search
+        // Main Navigation
+        #mws-navigation
+          ul
+            li
+              a(href='#')
+                i.icon-add-contact
+                |  管理员管理
+              ul.closed
+                li
+                  a(href='/adminuseradd') 管理员添加
+                li
+                  a(href='/adminuserlist') 管理员列表
+            li
+              a(href='#')
+                i.icon-users
+                |  会员管理
+              ul.closed
+                li
+                  a(href='/users') 会员列表
+            li
+              a(href='#')
+                i.icon-briefcase
+                | 商家管理
+              ul.closed
+                li
+                  a(href='/adminshopadd') 商家入驻
+                li
+                  a(href='/adminshoplist') 商家列表
+            li
+              a(href='#')
+                i.icon-food
+                | 商家食品管理
+              ul.closed
+                li
+                  a(href='/admingoodsadd') 食品添加
+                li
+                  a(href='/admingoodslist') 食品列表
+            li
+              a(href='#')
+                i.icon-food
+                | 订单管理
+              ul.closed
+                li
+                  a(href='/adminorderslist') 订单列表                 
+      // Main Container Start
+      #mws-container.clearfix
+        block admin
+        // footer
+        #mws-footer
+          | Copyright Your Website 2012. All Rights Reserved.
+      // Main Container End
+      // JavaScript Plugins
+      script(src='b/js/libs/jquery-1.8.3.min.js')
+      script(src='b/js/libs/jquery.mousewheel.min.js')
+      script(src='b/js/libs/jquery.placeholder.min.js')
+      script(src='b/custom-plugins/fileinput.js')
+      // jQuery-UI Dependent Scripts
+      script(src='b/jui/js/jquery-ui-1.9.2.min.js')
+      script(src='b/jui/jquery-ui.custom.min.js')
+      script(src='b/jui/js/jquery.ui.touch-punch.js')
+      // Plugin Scripts
+      script(src='b/plugins/datatables/jquery.dataTables.min.js')
+      //if lt IE 9
+        script(src='js/libs/excanvas.min.js')
+      script(src='b/plugins/flot/jquery.flot.min.js')
+      script(src='b/plugins/flot/plugins/jquery.flot.tooltip.min.js')
+      script(src='b/plugins/flot/plugins/jquery.flot.pie.min.js')
+      script(src='b/plugins/flot/plugins/jquery.flot.stack.min.js')
+      script(src='b/plugins/flot/plugins/jquery.flot.resize.min.js')
+      script(src='b/plugins/colorpicker/colorpicker-min.js')
+      script(src='b/plugins/validate/jquery.validate-min.js')
+      script(src='b/custom-plugins/wizard/wizard.min.js')
+      // Core Script
+      script(src='b/bootstrap/js/bootstrap.min.js')
+      script(src='b/js/core/mws.js')
+      // Themer Script (Remove if not needed)
+      script(src='b/js/core/themer.js')
+      // Demo Scripts (remove if not needed)
+      script(src='b/js/demo/demo.dashboard.js')

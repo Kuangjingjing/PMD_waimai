@@ -1,0 +1,32 @@
+extends ../publictemplate/common
+block admin
+ .mws-panel.grid_8
+  .mws-panel-header
+    span 商家入驻
+  .mws-panel-body.no-padding
+    form.mws-form(action='/adminshopdoupdate' method="POST" enctype="multipart/form-data")
+      .mws-form-inline
+        .mws-form-row
+          label.mws-form-label 商家名称
+          .mws-form-item
+            input.large(type='text' name="shopname" value=`${data.shopname}`)
+        .mws-form-row
+          label.mws-form-label 商家旧logo
+          .mws-form-item
+            img(src=`https://kuangjing.oss-cn-beijing.aliyuncs.com/${data.logo}`, alt="" width="200px")
+        .mws-form-row
+          label.mws-form-label 品牌 logo
+          .mws-form-item
+            input.large(type='file' name="logo")
+        .mws-form-row
+          label.mws-form-label 宣传语
+          .mws-form-item
+            input.large(type='text' name="content" value=`${data.content}`)
+        .mws-form-row
+          label.mws-form-label 配送费
+          .mws-form-item
+            input.large(type='text' name="fee" value=`${data.fee}`)
+      .mws-button-row
+        input(type="hidden" name="sid" value=`${data.id}`)
+        input.btn.btn-danger(type='submit' value='修改')
+        input.btn(type='reset' value='重置')

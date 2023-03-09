@@ -1,0 +1,29 @@
+extends ../publictemplate/common
+block admin
+ .mws-panel.grid_8
+  .mws-panel-header
+    span
+      i.icon-table
+      |  会员信息
+  .mws-panel-body.no-padding
+    #DataTables_Table_0_wrapper.dataTables_wrapper(role='grid')
+      #DataTables_Table_0_filter.dataTables_filter
+      table#DataTables_Table_0.mws-datatable.mws-table.dataTable(aria-describedby='DataTables_Table_0_info')
+        thead
+          tr(role='row')
+            th.sorting_asc(role='columnheader' tabindex='0' aria-controls='DataTables_Table_0' rowspan='1' colspan='1' aria-sort='ascending' aria-label='Rendering engine: activate to sort column descending' style='width: 258px;') 网名
+            th.sorting(role='columnheader' tabindex='0' aria-controls='DataTables_Table_0' rowspan='1' colspan='1' aria-label='Browser: activate to sort column ascending' style='width: 333px;') 真实姓名
+            th.sorting(role='columnheader' tabindex='0' aria-controls='DataTables_Table_0' rowspan='1' colspan='1' aria-label='Platform(s): activate to sort column ascending' style='width: 308px;') 图像
+            th.sorting(role='columnheader' tabindex='0' aria-controls='DataTables_Table_0' rowspan='1' colspan='1' aria-label='Engine version: activate to sort column ascending' style='width: 226px;') 手机号
+            th.sorting(role='columnheader' tabindex='0' aria-controls='DataTables_Table_0' rowspan='1' colspan='1' aria-label='Engine version: activate to sort column ascending' style='width: 226px;') 邮箱
+        tbody(role='alert' aria-live='polite' aria-relevant='all')
+        if data
+          tr.odd
+            td=data.username
+            td=data.realname
+            td
+              img(src=`https://kuangjing.oss-cn-beijing.aliyuncs.com/${data.pic}`, alt="" width="100px")
+            td=data.phone
+            td=data.email
+        else 
+          button.btn.btn-danger 当前会员没有详细信息

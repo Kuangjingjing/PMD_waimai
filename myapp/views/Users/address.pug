@@ -1,0 +1,27 @@
+extends ../publictemplate/common
+block admin
+ .mws-panel.grid_8
+  .mws-panel-header
+    span
+      i.icon-table
+      |  会员收货地址
+  .mws-panel-body.no-padding
+    #DataTables_Table_0_wrapper.dataTables_wrapper(role='grid')
+      #DataTables_Table_0_filter.dataTables_filter
+      table#DataTables_Table_0.mws-datatable.mws-table.dataTable(aria-describedby='DataTables_Table_0_info')
+        thead
+          tr(role='row')
+            th.sorting_asc(role='columnheader' tabindex='0' aria-controls='DataTables_Table_0' rowspan='1' colspan='1' aria-sort='ascending' aria-label='Rendering engine: activate to sort column descending' style='width: 258px;') 网名
+            th.sorting(role='columnheader' tabindex='0' aria-controls='DataTables_Table_0' rowspan='1' colspan='1' aria-label='Browser: activate to sort column ascending' style='width: 333px;') 真实姓名
+            th.sorting(role='columnheader' tabindex='0' aria-controls='DataTables_Table_0' rowspan='1' colspan='1' aria-label='Platform(s): activate to sort column ascending' style='width: 308px;') 手机号码
+            th.sorting(role='columnheader' tabindex='0' aria-controls='DataTables_Table_0' rowspan='1' colspan='1' aria-label='Engine version: activate to sort column ascending' style='width: 226px;') 地址
+        tbody(role='alert' aria-live='polite' aria-relevant='all')
+        if(datas.length  > 0)
+          -for(let i=0;i<datas.length;i++)
+            tr.odd
+              td=datas[i].username
+              td=datas[i].realname
+              td=datas[i].phone
+              td=datas[i].address
+        else 
+          button.btn.btn-danger 当前会员没有收获地址信息
